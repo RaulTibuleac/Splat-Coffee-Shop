@@ -24,7 +24,10 @@ public class CoffeeShopTest : MonoBehaviour
     
     void customer()
     {
-        int randomnumber = Random.Range(1, 10);
-        Debug.Log("Random number is: " + randomnumber);
+        string[] coffeeTypes = { "Latte", "Cappuccino", "Espresso", "Americano", "Mocha" };
+        int randomnumber = Random.Range(0, coffeeTypes.Length);
+        Debug.Log("I would like a " + coffeeTypes[randomnumber]);
+        
+    
     }
 }
