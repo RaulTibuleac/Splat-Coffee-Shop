@@ -10,23 +10,17 @@ public class CoffeeShopTest : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Debug.Log("I have ordered");
-        Debug.Log(amountOrdered + "coffees");
-        amountOrdered++;
-        Debug.Log("Cofees Sold: " + coffeesSold);
         customer();
     }
     // Update is called once per frame
-    void AddCoffee()
-    {
-        coffeesSold++;
-    }
-    
+
     void customer()
     {
         string[] coffeeTypes = { "Latte", "Cappuccino", "Espresso", "Americano", "Mocha" };
+        string[] coffeeSizes = { "Small", "Medium", "Large" };
         int randomnumber = Random.Range(0, coffeeTypes.Length);
-        Debug.Log("I would like a " + coffeeTypes[randomnumber]);
+        int randomSize = Random.Range(0, coffeeSizes.Length);
+        Debug.Log("I would like a " + coffeeSizes[randomSize] + " " + coffeeTypes[randomnumber]);
         
     
     }
