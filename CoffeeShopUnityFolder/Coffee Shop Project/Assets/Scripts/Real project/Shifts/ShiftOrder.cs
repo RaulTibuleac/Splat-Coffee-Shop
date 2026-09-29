@@ -5,13 +5,13 @@ public class ShiftOrder : MonoBehaviour
     int shiftOrder = 3;
     public void go()
     {
+        shiftOrder --;
         if (shiftOrder >0)
         {
-            shiftOrder --;
             Debug.Log("Shift's remaining: " + shiftOrder);
         }
        
-        else
+        else if (shiftOrder ==0)
         {
          Debug.Log("Shift's over!");
         }
