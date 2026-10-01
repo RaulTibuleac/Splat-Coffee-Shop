@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class CustomerOrder : MonoBehaviour
 {
+    //This will generate a random order for the customer
     public int randomNumber = 0;
     public int coffeesSold = 0;
     public float coffeePrice = 3.50f;
@@ -16,6 +17,7 @@ public class CustomerOrder : MonoBehaviour
 
     public void customer()
     {
+        //The customer will order a ranfom coffee type and sizze
         string[] coffeeTypes = { "Latte", "Cappuccino", "Espresso", "Americano", "Mocha" };
         string[] coffeeSizes = { "Small", "Medium", "Large" };
         randomNumber = Random.Range(0, coffeeTypes.Length);
