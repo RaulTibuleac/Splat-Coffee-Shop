@@ -1,9 +1,9 @@
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
-
 {
-public bool hasItem = false;
+//Public static boolean
+public static bool hasItem = false;
    void Start()
     {
         if (hasItem)
