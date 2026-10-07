@@ -28,7 +28,7 @@ public void c_item()
     }
 }
 
-void downgrade()
+void Use()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
