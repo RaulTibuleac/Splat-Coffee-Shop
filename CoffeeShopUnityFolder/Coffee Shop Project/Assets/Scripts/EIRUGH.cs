@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EIRUGH : MonoBehaviour
 {
-private string[] coffeeMenu = {"Espresso", "Cappuccino", "Latte, Mocha", "Americano", "Macchiato"};
+private string[] coffeeMenu = {"Espresso", "Cappuccino", "Latte", "Mocha", "Americano", "Macchiato"};
 private int refills = 1;
 private int maxRefills = 11;
 void Start()

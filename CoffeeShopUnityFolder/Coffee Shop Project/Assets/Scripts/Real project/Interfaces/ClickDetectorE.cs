@@ -1,20 +1,20 @@
 using UnityEngine;
 
-public class Detector : MonoBehaviour
+public class ClickDetectorE : MonoBehaviour
 {
     //Every frame
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             //This Is tagged "Main Camera" on the deafuult camera - only one camera should be the "Main Camera"
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                IIClickable clickable = hit.collider.GetComponent<IIClickable>();
+                IClickableE clickable = hit.collider.GetComponent<IClickableE>();
 
-                clickable?.OnClick();
-                //calls the interface "IIClickable"
+                clickable?.OnClickE();
+                //calls the interface "IClickableE"
             }
         }
     }

@@ -2,21 +2,26 @@ using UnityEngine;
 public class ShiftOrder : MonoBehaviour
 
 {
-    //There will be 3 shifts in the game, this will count down the shifts and output how many are left
-    int shiftOrder = 3;
-    public void Shifts()
+//There will be 3 shifts in the game, this will count down the shifts and output how many are left
+int shiftOrder = 3;
+int items = 0;
+    public void CorrectItem()
     {
-        //Count down the shifts and output how many are left
-        shiftOrder --;
-        if (shiftOrder >0)
+        //If the player gives the correct item to the customer, it will count down the shifts and output how many are left
+        items++;
+
+        if (items == 3)
         {
-            //Outputs how many shifts are left
-            Debug.Log("Shift's remaining: " + shiftOrder);
+         shiftOrder --;
+         items++;
+         Debug.Log("shift completed!");
+         Debug.Log("shifts remaining: " +shiftOrder);
         }
-       //Outputs that the shift is over
-        else if (shiftOrder ==0)
+        //When the shift order reaches 0, it will output that the shifts are over
+        if (shiftOrder == 0)
         {
-         Debug.Log("Shift's over!");
+            Debug.Log("Shifts Over!");
         }
+
     }
 }

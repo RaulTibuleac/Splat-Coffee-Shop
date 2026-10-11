@@ -6,7 +6,7 @@ public class CoffeeMachine : MonoBehaviour
 bool coffeeMachineOn = true;
     public void Coffee()
     {
-        if (!coffeeMachineOn)
+        if (coffeeMachineOn)
         {
             Debug.Log("Brewing coffee");
         }
