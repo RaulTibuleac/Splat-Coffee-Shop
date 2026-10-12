@@ -1,7 +1,11 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
 
 public class CustomerOrder : MonoBehaviour
 {
+
     //public integers
     public int randomNumber = 0;
     public int coffeesSold = 0;
