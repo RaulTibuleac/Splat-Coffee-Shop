@@ -11,19 +11,20 @@ public class PlayerCamera : MonoBehaviour
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = true;
+        Cursor.visible = false;
         
     }
 
     private void Update()
     {
+        //Gets mouse input
         float mouseX = Input.GetAxisRaw("Mouse X") * _sensX;
         float mouseY = Input.GetAxisRaw("Mouse Y") * _sensY;
 
         rotationY += mouseX;
 
         rotationX -= mouseY;  
-        rotationX = Mathf.Clamp(rotationX, -67.5f, 67.5f); 
+        rotationX = Mathf.Clamp(rotationX, -90f, 90f); 
     }
     private void LateUpdate()
     {
