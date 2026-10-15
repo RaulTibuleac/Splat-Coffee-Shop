@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SimpleMovement : MonoBehaviour
 {
-    public float speed = 5f;
+    [SerializeField]public float speed = 5f;
 
     void Update()
     {
