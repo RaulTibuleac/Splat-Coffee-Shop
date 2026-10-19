@@ -1,16 +1,15 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class SimpleMovement : MonoBehaviour
 {
-
-    [SerializeField]public float speed = 5f;
-
+    //Adds a header/title in the inspector made for keeping things clean and organised
     [Header("Movement")]
+    //
+    public Transform orientation;
     public float moveSpeed;
-    public Transform orientation; 
-
-
-    float horizontalInput; 
+    float horizontalInput;
     float verticalInput;
 
     Vector3 moveDirection;
@@ -18,6 +17,8 @@ public class SimpleMovement : MonoBehaviour
 
     private void Start()
     {
+        //Gets the component 'rigidbody'
+        //freezeing the rotation otherwise the 'player' would tumble over
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
     }
@@ -25,9 +26,8 @@ public class SimpleMovement : MonoBehaviour
     private void Update()
     {
         MyInput();
-
     }
-
+    //fixed frames every 0.2 seconds 
     private void FixedUpdate()
     {
         MovePlayer();
@@ -37,17 +37,13 @@ public class SimpleMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
-
     }
 
     private void MovePlayer()
     {
-        //calculate movement direction
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput; 
+        moveDirection.y = 0;
         rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
     }
-
-    
-
 
 }

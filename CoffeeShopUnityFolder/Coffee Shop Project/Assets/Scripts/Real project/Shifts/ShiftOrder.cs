@@ -5,7 +5,7 @@ public class ShiftOrder : MonoBehaviour
 //There will be 3 shifts in the game, this will count down the shifts and output how many are left
 int shiftOrder = 3;
 int items = 0;
-    public void CorrectItem()
+    public void ShiftAmount()
     {
         //If the player gives the correct item to the customer, it will count down the shifts and output how many are left
         items++;

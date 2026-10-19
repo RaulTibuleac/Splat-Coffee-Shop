@@ -1,9 +1,11 @@
 using UnityEngine;
 
+
 public class PlayerCamera : MonoBehaviour
 {
     [SerializeField] float _sensX;
     [SerializeField] float _sensY;
+    public Transform orientation;
 
     private float rotationX;
     private float rotationY;
