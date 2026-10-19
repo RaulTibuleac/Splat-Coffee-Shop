@@ -13,12 +13,12 @@ public class CustomerOrder : MonoBehaviour
 
     //Public float
     public float seconds = 2;
-     [SerializeField] public float coffeePrice = 3.50f;
+    [SerializeField] public float coffeePrice = 3.50f;
 
     //calls customer
     void Start()
     {
-        money();
+        //money();
         customer();
     }
 
@@ -34,16 +34,16 @@ public class CustomerOrder : MonoBehaviour
         Debug.Log("Hello, I would like to request a " + coffeeType[randomNumber] + " and a " + donutType[donutNumber]);
   }
 
-    private void money()
-    {
-        //Coroutine that waits for 2 seconds so that the cashier can toatl everything up
-        StartCoroutine(processTime());
-    }
+    // private void money()
+    // {
+    //     //Coroutine that waits for 2 seconds so that the cashier can toatl everything up
+    //     StartCoroutine(processTime());
+    // }
 
-    private IEnumerator processTime()
-    {
-        yield return new WaitForSeconds(seconds);
-        Debug.Log("Your total for today is " + coffeePrice);
-    }
+    // private IEnumerator processTime()
+    // {
+    //     yield return new WaitForSeconds(seconds);
+    //     Debug.Log("Your total for today is " + coffeePrice);
+    // }
 
 }
