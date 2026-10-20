@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cf6e04ad164caf498d10f013cce0c48, type: 3}
-  m_Name: CoffeeShopData
+  m_Name: CoffeeTypeData
   m_EditorClassIdentifier: Assembly-CSharp::CoffeeData
   CoffeName: 
   CoffeeIcon: {fileID: 0}
