@@ -1,27 +1,50 @@
 using UnityEngine;
 public class ShiftOrder : MonoBehaviour
-
 {
-//There will be 3 shifts in the game, this will count down the shifts and output how many are left
-int shiftOrder = 3;
-int items = 0;
-    public void ShiftAmount()
+    //Public Integer
+    public int shiftsRemaining = 3;
+    //Public Boolean
+    public bool dayStarted = false;
+    
+    public void ClockIn()
     {
-        //If the player gives the correct item to the customer, it will count down the shifts and output how many are left
-        items++;
-
-        if (items == 3)
+        //If the player decides to click It again
+        // It will say that the shifts already started
+        if (dayStarted)
         {
-         shiftOrder --;
-         items++;
-         Debug.Log("shift completed!");
-         Debug.Log("shifts remaining: " +shiftOrder);
+        Debug.Log("Shift has already started!");
         }
-        //When the shift order reaches 0, it will output that the shifts are over
-        if (shiftOrder == 0)
+        //If the player has not then It will start the game
+        else if (dayStarted = true)
         {
-            Debug.Log("Shifts Over!");
+        Debug.Log("Shift Started!");
+        Debug.Log("The first shift has started!");
         }
+    }
 
+    public void CompleteOrder()
+    {
+        //If they player tries to play before clocking in then It will
+        //say that they must clock In first
+        if (!dayStarted)
+        {
+            Debug.Log("You must clock In first!");
+        }
+        //Shifts count down
+        shiftsRemaining-- ;
+        Debug.Log("Customer order completed!");
+        Debug.Log("Shifts remaining: " + shiftsRemaining);
+
+        //Once the shifts reaches 0 It will say
+        //You can go home now 
+        if (shiftsRemaining <= 0)
+        {
+            Debug.Log("Shifts Over, you can go home now!");
+            dayStarted = false;
+        }
+        else
+        {
+            Debug.Log("Next shit has started!");
+        }
     }
 }
