@@ -10,12 +10,12 @@ public class ShiftOrder : MonoBehaviour
     {
         //If the player decides to click It again
         // It will say that the shifts already started
-        if (dayStarted)
+        if (dayStarted == false)
         {
         Debug.Log("Shift has already started!");
         }
         //If the player has not then It will start the game
-        else if (dayStarted = true)
+        else if (dayStarted == true)
         {
         Debug.Log("Shift Started!");
         Debug.Log("The first shift has started!");
