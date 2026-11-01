@@ -1,34 +1,34 @@
 using UnityEngine;
 
-public class CustomerPayment : MonoBehaviour
+public class TillManager : MonoBehaviour
 {
-    public bool paysCash;
+    //Public Boolean
+    private bool paysCash;
 
-    void Start()
+
+    public void ChoosePayment()
     {
         int randomNumber = Random.Range(0, 2);
 
         if (randomNumber == 0)
         {
             paysCash = true;
-            Debug.Log("Customer will pay with cash");
         }
         else
         {
             paysCash = false;
-            Debug.Log("Customer will pay with card");
         }
     }
 
-    public void Pay()
+    public void Pay(int price)
     {
         if (paysCash)
         {
-            Debug.Log("Customer paid with cash!");
+            Debug.Log("Customer paid with cash: £" + price);
         }
         else
         {
-            Debug.Log("Customer paid with card!");
+            Debug.Log("Customer paid with card: £" + price);
         }
     }
 }
