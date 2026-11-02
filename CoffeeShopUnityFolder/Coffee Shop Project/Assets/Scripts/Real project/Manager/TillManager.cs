@@ -5,7 +5,7 @@ public class TillManager : MonoBehaviour
     //Public Boolean
     private bool paysCash;
 
-
+    //Random option for the payment type
     public void ChoosePayment()
     {
         int randomNumber = Random.Range(0, 2);
@@ -20,6 +20,8 @@ public class TillManager : MonoBehaviour
         }
     }
 
+    //method with a price
+    
     public void Pay(int price)
     {
         if (paysCash)

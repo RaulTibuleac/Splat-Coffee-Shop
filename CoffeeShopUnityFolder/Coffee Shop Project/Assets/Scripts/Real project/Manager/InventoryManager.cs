@@ -4,6 +4,7 @@ public class InventoryManager : MonoBehaviour
 {
     //Public static boolean
     public static bool hasItem = false;
+
     //Public static string
     public static string heldItem = "";
 
@@ -14,13 +15,16 @@ public class InventoryManager : MonoBehaviour
     // If donut Picked Up
     public void d_item()
     {
+        //If its empty
         if (heldItem == "")
         {
+            //Inv no longer empty
             heldItem = "Donut";
             Debug.Log("You picked up the donut!");
         }
         else
         {
+            //If tried to pick up again
             Debug.Log("You can only carry one item!");
         }
     }
@@ -30,20 +34,24 @@ public class InventoryManager : MonoBehaviour
     {
         if (heldItem == "")
         {
+            //Inv no longer empty
             heldItem = "Coffee";
             Debug.Log("You picked up the coffee!");
         }
         else
         {
+            //If tried to pick up again
             Debug.Log("You can only carry one item!");
         }
     }
 
     //If an Item Is Given To The Customer
+    //If item held is not empty
     public void Customer()
     {
         if (heldItem != "")
         {
+            //The item is empmty not in inv
             Debug.Log("You gave the customer: " + heldItem);
 
             customerOrder.GiveItem();
@@ -52,53 +60,8 @@ public class InventoryManager : MonoBehaviour
         }
         else
         {
+            //If empty then pick something up
             Debug.Log("You don't have an item to give!");
         }
     }
 }
-
-
-
-//     public void d_item()
-//     {
-//         if (heldItem == "")
-//         {
-//             heldItem = "Donut";
-//             Debug.Log("You picked up the donut!");
-//         }
-//         else
-//         {
-//             Debug.Log("You can only carry one item!");
-//         }
-//     }
-//     //checks if the player has the item and gives it to the customer
-//     public void c_item()
-//     {
-//         if (heldItem == "")
-//         {
-//             heldItem = "Coffee";
-//             Debug.Log("You picked up the coffee!");
-//         }
-//         else
-//         {
-//             Debug.Log("You can only carry one item!");
-//         }
-//     }
-//     //If the Item is in the inventory, it will be given to the customer and removed from the inventory
-
-//   public void Customer()
-//     {
-//         if (hasItem)
-//         {
-//             hasItem = true;
-
-//             shiftOrder.GiveItems();
-
-//             Debug.Log("You gave an Item to the customer!");
-//         }
-//         else
-//         {
-//             Debug.Log("You don't have an item to give!");
-//         }
-//     }
-// }

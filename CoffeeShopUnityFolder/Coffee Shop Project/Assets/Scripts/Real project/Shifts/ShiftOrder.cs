@@ -3,13 +3,16 @@ public class ShiftOrder : MonoBehaviour
 {
     //Public Integer
     public int shiftsRemaining = 3;
+    public int ordersCompleted = 0;
+
     //Public Boolean
     public bool dayStarted = false;
     public bool itemsGiven = false;
-    public int ordersCompleted = 0;
+
+    //Refrence
     public CustomerOrder customerOrder;
     
-     public void ClockIn()
+    public void ClockIn()
     {
         // All shifts are finished
         if (shiftsRemaining <= 0)
@@ -25,14 +28,16 @@ public class ShiftOrder : MonoBehaviour
             return;
         }
 
-    // Start the shift
-    dayStarted = true;
+        // Start the shift
+        dayStarted = true;
 
-    Debug.Log("Shift Started!");
+        Debug.Log("Shift Started!");
 
-    customerOrder.NewOrder();
-}
+        customerOrder.NewOrder();
+    }
 
+    //If the person has not clocked In
+    //They will need to clock In
     public void CompleteOrder()
     {
         if (!dayStarted)
@@ -52,12 +57,16 @@ public class ShiftOrder : MonoBehaviour
         CompleteShift();
     }
 
+
     public void GiveItems()
     {
         itemsGiven = true;
         Debug.Log("Items given to customer!");
     }
 
+    //Counts down the shifts
+    //If the shifts is less than or equal to 0
+    //It will output all shifts completed
     public void CompleteShift()
     {
         shiftsRemaining--;
@@ -78,20 +87,3 @@ public class ShiftOrder : MonoBehaviour
         Debug.Log("Next shift started!");
     }
 }
-
-// public void ClockIn()
-//     {
-//         //If the player decides to click It again
-//         // It will say that the shifts already started
-//         if (dayStarted)
-//         {
-//             Debug.Log("Shift has already started!");
-//             return;
-//         }
-//         //If the player has not then It will start the game
-//         else if (dayStarted == true)
-//         {
-//             Debug.Log("Shift Started!");
-//             Debug.Log("The first shift has started!");
-//         }
-//     }
