@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 public class CustomerOrder : MonoBehaviour
 
@@ -9,10 +10,13 @@ public class CustomerOrder : MonoBehaviour
     public int itemsRequired;
     public int itemsGiven;
     public int price;
+    
 
     //Refrences
     public ShiftOrder shiftOrder;
     public TillManager tillManager;
+
+    public TMP_Text orderText;
 
     void Start()
     {
@@ -33,17 +37,20 @@ public class CustomerOrder : MonoBehaviour
             {
                 Debug.Log("Customer says: I want a coffee!");
                 price = 3;
+                orderText.text = "CURRENT ORDER\nCoffee\nPrice: $3";
             }
             else
             {
                 Debug.Log("Customer says: I want a donut!");
                 price = 2;
+                orderText.text = "CURRENT ORDER\nDonut\nPrice: $2";
             }
         }
         else
         {
             Debug.Log("Customer says: I want a coffee and a donut!");
             price = 5;
+            orderText.text = "CURRENT ORDER\nCoffee + Donut\nPrice: $5";
         }
     }
 
